@@ -77,31 +77,77 @@ Before(async function (this: CustomWorld) {
 });
 
 // ── AFTER ────────────────────────────────────────────────────
-// Runs after EACH scenario
-// If scenario FAILED → take screenshot → attach to report
-// Always close context → clean up memory
-After(async function (this: CustomWorld,scenario: ITestCaseHookParameter) {
+// Runs AFTER every scenario execution
+//
+// Responsibilities:
+//   ✔ Check whether scenario PASSED or FAILED
+//   ✔ If FAILED:
+//       • Capture full-page screenshot
+//       • Attach screenshot to Cucumber Report
+//       • Same screenshot is automatically available
+//         inside the Allure Report
+//   ✔ Print execution status in terminal
+//   ✔ Close browser context
+//       • Clears cookies
+//       • Clears local/session storage
+//       • Prevents memory leaks
+//       • Ensures next scenario starts fresh
+//
+// NOTE:
+// Browser is NOT closed here.
+// Only BrowserContext is closed.
+// Browser closes once in AfterAll().
+After(async function (
+  this: CustomWorld,
+  scenario: ITestCaseHookParameter
+) {
 
-  // Check if this scenario failed
+  // Check whether current scenario failed
   if (scenario.result?.status === 'FAILED') {
 
-    // Take full page screenshot
+    // Take screenshot ONLY for failed scenarios
+    // fullPage:true captures the complete webpage
+    // instead of only the visible browser window
     const screenshot = await this.page.screenshot({
       fullPage: true
     });
 
-    // Attach screenshot to Cucumber HTML report
-    // You will see this image inside the report when you open it
-    await this.attach(screenshot, 'image/png');
+    // Attach screenshot to Cucumber Report.
+    // Since Allure is integrated with Cucumber,
+    // the same screenshot automatically appears
+    // inside the Allure report.
+    //
+    // screenshot → Image captured by Playwright
+    // image/png → MIME type so reports know
+    //             this attachment is an image.
+    await this.attach(
+      screenshot,
+      'image/png'
+    );
 
-    console.log(`❌ Scenario FAILED: ${scenario.pickle.name}`);
-    console.log('📸 Screenshot captured and attached to report');
+    console.log("══════════════════════════════");
+    console.log("❌ Scenario FAILED");
+    console.log(`Scenario : ${scenario.pickle.name}`);
+    console.log(`Status   : ${scenario.result.status}`);
+    console.log("📸 Screenshot captured");
+    console.log("══════════════════════════════");
+
+  } else {
+
+    console.log("══════════════════════════════");
+    console.log("✅ Scenario PASSED");
+    console.log(`Scenario : ${scenario.pickle.name}`);
+    console.log("══════════════════════════════");
+
   }
 
-  // Close context after every scenario
-  // This clears cookies, sessions, storage
+  // Close BrowserContext.
+  // This removes cookies, cache, storage,
+  // authentication sessions and prevents
+  // memory leaks between scenarios.
   await this.context.close();
-  console.log('✅ Context closed after scenario');
+
+  console.log("🧹 Browser Context Closed");
 });
 
 // ── AFTER ALL ────────────────────────────────────────────────

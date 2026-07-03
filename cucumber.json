@@ -13,10 +13,12 @@
     "format": [
       "progress-bar",
       "json:reports/cucumber-report.json",
-      "html:reports/cucumber-report.html"
+      "html:reports/cucumber-report.html",
+      "allure-cucumberjs/reporter"
     ],
     "formatOptions": {
-      "snippetInterface": "async-await"
+      "snippetInterface": "async-await",
+      "resultsDir": "allure-results"
     },
     "publishQuiet": true
   },
@@ -51,9 +53,9 @@
     ],
     "tags": "@regression",
     "format": [
-  "progress-bar",
-  "json:reports/cucumber-report.json"
-],
+      "progress-bar",
+      "json:reports/cucumber-report.json"
+    ],
     "publishQuiet": true
   }
 }

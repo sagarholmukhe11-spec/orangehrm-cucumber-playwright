@@ -1,0 +1,1 @@
+[{"values":["OrangeHRM"],"name":"Application"},{"values":["QA"],"name":"Environment"},{"values":["Chromium"],"name":"Browser"},{"values":["Playwright"],"name":"Framework"},{"values":["TypeScript"],"name":"Language"},{"values":["Cucumber"],"name":"BDD"},{"values":["Windows"],"name":"OS"},{"values":["Local"],"name":"Execution"}]

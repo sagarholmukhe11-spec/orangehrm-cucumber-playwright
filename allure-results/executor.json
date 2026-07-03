@@ -1,0 +1,7 @@
+{
+  "name": "GitHub Actions",
+  "type": "github",
+  "url": "https://github.com/sagarholmukhe11-spec/orangehrm-cucumber-playwright",
+  "buildName": "OrangeHRM Automation",
+  "buildOrder": 1
+}
