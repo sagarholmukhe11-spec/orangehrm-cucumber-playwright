@@ -1,0 +1,25 @@
+{
+  "name": "orangehrm-cucumber-playwright",
+  "version": "1.0.0",
+  "description": "Cucumber BDD Playwright TypeScript framework for OrangeHRM",
+  "scripts": {
+    "test": "node scripts/run-tests.js",
+    "test:smoke": "node scripts/run-tests.js @smoke",
+    "test:regression": "node scripts/run-tests.js @regression",
+    "test:login": "node scripts/run-tests.js @login",
+    "test:employee": "node scripts/run-tests.js @employee",
+    "report": "node scripts/generate-report.js"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.44.0",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.9.7",
+    "multiple-cucumber-html-reporter": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.2"
+  }
+}

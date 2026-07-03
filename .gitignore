@@ -1,0 +1,17 @@
+# Dependencies — too large to push
+node_modules/
+
+# Test reports — generated automatically
+reports/
+
+# Environment file — has passwords, never push
+.env
+
+# TypeScript compiled output
+dist/
+
+# Test result files
+test-results/
+
+# Log files
+*.log
