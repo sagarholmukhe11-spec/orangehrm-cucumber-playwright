@@ -1,28 +1,28 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"As a user
-  I want to login to OrangeHRM
-  So that I can access the HR system","4161","Empty password shows required error","","2026-07-03","passed","2026-07-03","","","",""
 "As an HR admin
   I want to manage employees in OrangeHRM
-  So that I can maintain accurate employee records","19218","Add a new employee successfully","","2026-07-03","passed","2026-07-03","","","",""
+  So that I can maintain accurate employee records","13703","Add a new employee successfully","","2026-07-04","failed","2026-07-04","","","",""
+"As a user
+  I want to login to OrangeHRM
+  So that I can access the HR system","8528","Empty username shows required error","","2026-07-04","failed","2026-07-04","","","",""
+"As a user
+  I want to login to OrangeHRM
+  So that I can access the HR system","10088","Invalid credentials show error message","","2026-07-04","failed","2026-07-04","","","",""
+"As a user
+  I want to login to OrangeHRM
+  So that I can access the HR system","19800","Valid admin login navigates to dashboard","","2026-07-04","failed","2026-07-04","","","",""
 "As an HR admin
   I want to manage employees in OrangeHRM
-  So that I can maintain accurate employee records","9717","Search for non existing employee shows no records","","2026-07-03","passed","2026-07-03","","","",""
+  So that I can maintain accurate employee records","8395","Search for non existing employee shows no records","","2026-07-04","failed","2026-07-04","","","",""
+"As a user
+  I want to login to OrangeHRM
+  So that I can access the HR system","16957","Empty password shows required error","","2026-07-04","failed","2026-07-04","","","",""
+"As a user
+  I want to login to OrangeHRM
+  So that I can access the HR system","7492","Successful logout returns to login page","","2026-07-04","failed","2026-07-04","","","",""
 "As an HR admin
   I want to manage employees in OrangeHRM
-  So that I can maintain accurate employee records","15004","Search for an existing employee","","2026-07-03","passed","2026-07-03","","","",""
-"As a user
-  I want to login to OrangeHRM
-  So that I can access the HR system","3294","Empty username shows required error","","2026-07-03","passed","2026-07-03","","","",""
+  So that I can maintain accurate employee records","8251","Add employee with only first name fails validation","","2026-07-04","failed","2026-07-04","","","",""
 "As an HR admin
   I want to manage employees in OrangeHRM
-  So that I can maintain accurate employee records","10651","Add employee with only first name fails validation","","2026-07-03","passed","2026-07-03","","","",""
-"As a user
-  I want to login to OrangeHRM
-  So that I can access the HR system","4988","Invalid credentials show error message","","2026-07-03","passed","2026-07-03","","","",""
-"As a user
-  I want to login to OrangeHRM
-  So that I can access the HR system","6521","Successful logout returns to login page","","2026-07-03","passed","2026-07-03","","","",""
-"As a user
-  I want to login to OrangeHRM
-  So that I can access the HR system","4471","Valid admin login navigates to dashboard","","2026-07-03","passed","2026-07-03","","","",""
+  So that I can maintain accurate employee records","7649","Search for an existing employee","","2026-07-04","failed","2026-07-04","","","",""
